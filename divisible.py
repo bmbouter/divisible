@@ -25,3 +25,21 @@ def divisible_by_nine(num):
 
 def divisible_by_ten(num):
     return str(num)[-1] == '0'
+
+def divisible_by_two_through_ten(num):
+    tests = [divisible_by_two,
+            divisible_by_three,
+            divisible_by_four,
+            divisible_by_five,
+            divisible_by_six,
+            divisible_by_seven,
+            divisible_by_eight,
+            divisible_by_nine,
+            divisible_by_ten,]
+    return all_tests_false(num, tests)
+
+def all_tests_false(num, tests):
+    for fun in tests:
+        if fun(num) == True:
+            return False
+    return True
